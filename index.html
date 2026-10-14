@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ตื่นจริง – แอปปลุกที่ต้องตื่นจริงๆ</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><div class="logo">☀️ ตื่นจริง</div><div class="chip" id="streak">🔥 0 วัน</div></header>
+  <section class="hero">
+    <div id="clock">--:--</div>
+    <div id="date"></div>
+    <div id="goalLine"></div>
+  </section>
+
+  <section class="card">
+    <h2>ตั้งปลุก</h2>
+    <input type="time" id="time" value="06:30">
+    <div class="lbl">ภารกิจปลุกสมอง — ทำให้ครบเสียงถึงจะหยุด (ไม่มีปุ่มเลื่อนปลุก)</div>
+    <div class="seg" id="seg">
+      <button data-m="math">🧮 คำนวณ</button>
+      <button data-m="type">⌨️ พิมพ์ประโยค</button>
+      <button data-m="tap">👆 แตะ 1–9</button>
+    </div>
+    <button class="btn" id="set">ตั้งปลุก</button>
+    <button class="ghost" id="test">ทดลองปลุกใน 5 วินาที</button>
+    <div id="status"></div>
+  </section>
+
+  <section class="card">
+    <h2>สถิติการตื่น</h2>
+    <div class="stats">
+      <div><b id="sStreak">0</b><span>วันติดต่อกัน</span></div>
+      <div><b id="sAvg">–</b><span>วินาทีเฉลี่ยที่ใช้ตื่น</span></div>
+    </div>
+    <div class="bars" id="bars"></div>
+    <div class="empty" id="empty">ยังไม่มีข้อมูล ลองตั้งปลุกแล้วตื่นดูสิ</div>
+  </section>
+
+  <section class="card" id="friends" hidden>
+    <h2>🏆 แข่งตื่นกับเพื่อน</h2>
+    <div id="join" hidden>
+      <input id="nick" placeholder="ตั้งชื่อเล่นของคุณ" maxlength="16">
+      <button class="btn" id="joinBtn">เข้าร่วมกระดานแข่ง</button>
+    </div>
+    <div id="board" hidden>
+      <div class="lbl">อันดับสัปดาห์นี้ · ตื่นเร็วและตื่นต่อเนื่องได้คะแนนเยอะ</div>
+      <ol id="rank"></ol>
+    </div>
+    <button class="ghost" id="invite">📨 ชวนเพื่อนมาแข่ง</button>
+    <div id="fmsg"></div>
+  </section>
+
+  <p class="note">เวอร์ชันเว็บนี้เป็นต้นแบบ ต้องเปิดหน้านี้ค้างไว้และเปิดเสียงถึงจะปลุกได้<br>แอปมือถือจริงจะปลุกได้แม้ปิดหน้าจอ</p>
+</main>
+
+<div class="ov" id="ring" hidden>
+  <div class="bell">⏰</div>
+  <div id="rclock">06:30</div>
+  <p>ตื่นได้แล้ว! ทำภารกิจให้ครบเพื่อปิดเสียง</p>
+  <div class="mbox" id="mission"></div>
+  <button id="cancelTest" hidden>ยกเลิกการทดลอง</button>
+</div>
+
+<div class="ov" id="morning" hidden>
+  <div class="sun">🌅</div>
+  <h1>อรุณสวัสดิ์!</h1>
+  <p id="mtext"></p>
+  <input id="goal" placeholder="เป้าหมายสำคัญที่สุดของวันนี้คืออะไร?" maxlength="80">
+  <button class="btn" id="go">เริ่มวันนี้</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
